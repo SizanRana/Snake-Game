@@ -72,20 +72,20 @@
 
 		//controlling the snake
 
-		let d;
+		let dir;
 
 		document.addEventListener("keydown",direction);
 
 		function direction(event){
 		    let key = event.keyCode;
-		    if( key == 37 && d != "RIGHT"){
-		        d = "LEFT";
-		    }else if(key == 38 && d != "DOWN"){
-		        d = "UP";
-		    }else if(key == 39 && d != "LEFT"){
-		        d = "RIGHT";
-		    }else if(key == 40 && d != "UP"){
-		        d = "DOWN";
+		    if( key == 37 && dir != "RIGHT"){
+		        dir = "LEFT";
+		    }else if(key == 38 && dir != "DOWN"){
+		        dir = "UP";
+		    }else if(key == 39 && dir != "LEFT"){
+		        dir = "RIGHT";
+		    }else if(key == 40 && dir != "UP"){
+		        dir = "DOWN";
 		    }
 		}
 
@@ -120,10 +120,10 @@
 		    let snakeY = snake[0].y;
 		    
 		    // which direction
-		    if( d == "LEFT") snakeX -= box;
-		    if( d == "RIGHT") snakeX += box;
-		    if( d == "UP") snakeY -= box;
-		    if( d == "DOWN") snakeY += box;
+		    if( dir == "LEFT") snakeX -= box;
+		    if( dir == "RIGHT") snakeX += box;
+		    if( dir == "UP") snakeY -= box;
+		    if( dir == "DOWN") snakeY += box;
 		    
 		    // if the snake eats the food
 		    if(snakeX == food.x && snakeY == food.y){
